@@ -29,16 +29,28 @@
                                 <frame key="frameInset" minX="142" minY="268" width="90" height="90"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="paper"/>
+                                <connections>
+                                    <action selector="choosePaper:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Kp7-5Y-Wax"/>
+                                    <segue destination="sDB-Bq-xxX" kind="show" identifier="resultView" id="i5b-pu-YWv"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="31t-b4-JC2">
                                 <frame key="frameInset" minX="213" minY="381" width="90" height="90"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="scissors"/>
+                                <connections>
+                                    <action selector="chooseScissors:" destination="BYZ-38-t0r" eventType="touchUpInside" id="0R3-fI-LD6"/>
+                                    <segue destination="sDB-Bq-xxX" kind="show" identifier="resultView" id="32U-34-BC5"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0wQ-MJ-SgZ">
                                 <frame key="frameInset" minX="72" minY="381" width="90" height="90"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="rock"/>
+                                <connections>
+                                    <action selector="chooseRock:" destination="BYZ-38-t0r" eventType="touchUpInside" id="y9o-Lc-PNk"/>
+                                    <segue destination="sDB-Bq-xxX" kind="show" identifier="resultView" id="CaW-Bg-67E"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -60,11 +72,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bft-9j-8fo">
-                                <frame key="frameInset" minX="67" minY="206" width="240" height="240"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R0K-PH-FA8">
                                 <frame key="frameInset" minX="67" minY="154" width="240" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -77,20 +84,24 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Play Again"/>
                                 <connections>
-                                    <action selector="backToDefault:" destination="sDB-Bq-xxX" eventType="touchUpInside" id="Lzy-yh-NcD"/>
+                                    <segue destination="BYZ-38-t0r" kind="show" id="gDY-h8-Ado"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rG7-iP-p4c">
+                                <frame key="frameInset" minX="67" minY="200" width="240" height="240"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
-                        <outlet property="resultImage" destination="bft-9j-8fo" id="NGs-U4-mFc"/>
+                        <outlet property="resultImage" destination="rG7-iP-p4c" id="J2g-vC-tsd"/>
                         <outlet property="resultLabel" destination="R0K-PH-FA8" id="GRw-zl-P4A"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QbD-jD-Vo1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="877.60000000000002" y="36.431784107946029"/>
+            <point key="canvasLocation" x="861.60000000000002" y="36.431784107946029"/>
         </scene>
     </scenes>
     <resources>
@@ -98,4 +109,7 @@
         <image name="rock" width="75" height="65"/>
         <image name="scissors" width="75" height="65"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="32U-34-BC5"/>
+    </inferredMetricsTieBreakers>
 </document>

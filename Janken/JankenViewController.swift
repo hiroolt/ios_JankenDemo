@@ -12,7 +12,7 @@ class JankenViewController: UIViewController {
 
     // MARK: Propeties
     
-    var junken: Int!
+    var janken: Int!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,6 +30,28 @@ class JankenViewController: UIViewController {
     
     // MARK: Actions
 
+    
+    @IBAction func choosePaper(_ sender: UIButton) {
+        janken = 1
+    }
+    
+    @IBAction func chooseRock(_ sender: UIButton) {
+        janken = 2
+    }
+    
+    @IBAction func chooseScissors(_ sender: UIButton) {
+        janken = 3
+    }
+ 
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "resultView" {
+            let controller = segue.destination as! ResultViewController
+            
+            controller.userValue = janken
+            controller.appValue = randomJankenResult()
+        }
+    }
 
 
 }
