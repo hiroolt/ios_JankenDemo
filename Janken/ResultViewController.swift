@@ -87,5 +87,12 @@ class ResultViewController: UIViewController {
         // Do any additional setup after loading the view.
         
     }
+    
+    //MARK: Functions
+    
+    @IBAction func ReturnBtnPressed(_ sender: AnyObject) {
+        dismiss(animated: true, completion: nil)
+    }
+    
 
 }
